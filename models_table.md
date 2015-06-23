@@ -24,3 +24,7 @@ primary key | foregin key | foregin key  | text           | text           | tex
 ID          | city     | state      | address 
 ----------------------------------------------
 primary key | text     | text       | text
+
+
+#Relationships.
+Each event has an application due date, some location and possible travel plans. Many events can be in the same location. Many locations can have the same event. Travel and applicaton due date is specifc to individual events.
