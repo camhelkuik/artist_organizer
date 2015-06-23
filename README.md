@@ -18,22 +18,34 @@ The task is to build a database-driven web application to help manage this artis
 ### "Should" cases
 Should be able to do:
 
-Create, read, update and delete event records
-Create, update, delete locations
-Assign events to a location (a given location should be able to hold multiple events)
-Create, read, update and delete application information
-Assign application information to an event
-Create, read, update and delete travel plans
-Assign travel plans to an event
-Fetch all events in a given location
-Fetch all events in a given time frame (ex. user specifies the month they would like to see the events for)
-List all the application information according to due date
-List all the events according to due date
+-Create, read, update and delete event records
+
+-Create, update, delete locations
+
+-Assign events to a location (a given location should be able to hold multiple events)
+
+-Create, read, update and delete application information
+
+-Assign application information to an event
+
+-Create, read, update and delete travel plans
+
+-Assign travel plans to an event
+
+-Fetch all events in a given location
+
+-Fetch all events in a given time frame (ex. user specifies the month they would like to see the events for)
+
+-List all the application information according to due date
+
+-List all the events according to due date
 
 ### "Should not" cases
 What we should not be able to do:
 
-Be able to create an event without application information
-Be able to create application information without an event
-Delete a location without first checking that there are no events assigned to it
+-Be able to create an event without application information
+
+-Be able to create application information without an event
+
+-Delete a location without first checking that there are no events assigned to it
 
