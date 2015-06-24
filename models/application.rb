@@ -40,11 +40,11 @@ class Application
   def self.find_rows(field_name, id)
     results = self.find_rows(field_name, id)
     results_as_objects = []
-  
+
     results.each do |result_hash|
     results_as_objects << Application.new(result_hash)
     end
-  
+
     return results_as_objects
   end
   
@@ -68,7 +68,8 @@ class Application
   # Returns self, an object.
   def save
     CONNECTION.execute("UPDATE applications SET events_id = #{@events_id}, application_fee = #{@application_fee}, event_fee = #{@event_fee},
-     submitted = #{@submitted}, accepted = '#{@accepted}', due_date = #{@due_date}, locations_id = #{@locations_id}, application_details = '#{@application_details};")
+     submitted = '#{@submitted}', accepted = '#{@accepted}', due_date = '#{@due_date}', locations_id = #{@locations_id}, application_details = '#{@application_details}'
+     WHERE id = #{@id};")
      return self
   end
   

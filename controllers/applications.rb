@@ -17,20 +17,24 @@ end
 #-----------------------------------------------------------------------------
 # View applications
 #-----------------------------------------------------------------------------
-get "/view_application_list" do
+get "/view_application_list/:x" do
   erb :"applications/view_app_list"
 end
 
-# Can't load this method
+# Can't load this method can't run .each
 get "/view_app/:x" do
-  @view = Application.find_rows("id", params["x"].to_i)
+  @view = Application.find_as_objects(params["x"].to_i)
   erb :"applications/view_app"
 end
 #------------------------------------------------------------------------------
 # Update applications
 #------------------------------------------------------------------------------
 get "/update_application" do
-  erb :"applications/update_app"
+  erb :"applications/update_app_list"
+end
+
+get "/update_form/:x" do
+  erb :"applications/update_form"
 end
 
 # Can't load this method
@@ -66,16 +70,17 @@ end
 #--------------------------------------------------------------------------------
 # Delete applications
 #--------------------------------------------------------------------------------
-get "/delete_application" do
+get "/delete_application/:x" do
   erb :"applications/delete_app_list"
 end
 
 get "/delete_app/:x" do
   @d = Application.new("id" => params["x"].to_i)
-    
-  if @d.delete_app
-    erb :"delete_success"
-  else
-    erb :"delete_failure"
-  end
+  @d.delete
+  erb :"applications/delete_success"
+  # if @d.delete_app
+ #    erb :"delete_success"
+ #  else
+ #    erb :"delete_failure"
+ #  end
 end
