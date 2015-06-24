@@ -1,14 +1,14 @@
 <h2>Please enter the new application information:</h2>
 
 <form action="/change_app/<%= params["x"] %>">
-  <input type="number" placeholder="Enter event ID" name="events_id">
-  <input type="number" placeholder="Enter application fee" name="application_fee">
-  <input type="number" placeholder="Enter event fee" name="event_fee">
-  <input type="text" placeholder="Submitted? Enter yes or no" name="submitted">
-  <input type="text" placeholder="Accepted? Enter yes, NA, or no" name="accepted">
-  <input type="text" placeholder="Enter due date" name="due_date">
-  <input type="number" placeholder="Enter location ID" name="locations_id">
-  <input type="text" placeholder="Enter application details" name="application_details">
+  <input type="number" placeholder="Enter event ID" name="events_id" value="<% params["events_id"] %>">
+  <input type="number" placeholder="Enter application fee" name="application_fee" value="<% params["application_fee"] %>">
+  <input type="number" placeholder="Enter event fee" name="event_fee" value="<% params["event_fee"] %>">
+  <input type="text" placeholder="Submitted? Enter yes or no" name="submitted" value="<% params["submitted"] %>">
+  <input type="text" placeholder="Accepted? Enter yes, NA, or no" name="accepted" value="<% params["accepted"] %>">
+  <input type="text" placeholder="Enter due date" name="due_date" value="<% params["due_date"] %>">
+  <input type="number" placeholder="Enter location ID" name="locations_id" value="<% params["locations_id"] %>">
+  <input type="text" placeholder="Enter application details" name="application_details" value="<% params["application_details"] %>">
   
   <input type="submit">
 </form>

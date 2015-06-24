@@ -23,7 +23,7 @@ end
 
 # Can't run .each
 get "/view_app/:x" do
-  @view = Application.where_find_rows("id", params["x"].to_i)
+  @view = Application.find_rows("id", params["x"].to_i)
   erb :"applications/view_app"
 end
 #------------------------------------------------------------------------------
@@ -38,31 +38,31 @@ get "/update_form/:x" do
 end
 
 get "/change_app/:x" do
-    entry = Application.find_as_objects(params["x"].to_i)
-    unless params["events_id"].blank?
-      entry.events_id = params["events_id"]
-    end
-    unless params["application_fee"].blank?
-      entry.application_fee = params["applications_fee"]
-    end
-    unless params["event_fee"].blank?
-      entry.event_fee = params["event_fee"]
-    end
-    unless params["submitted"].blank?
-      entry.submitted = params["submitted"]
-    end
-    unless params["accepted"].blank?
-      entry.accepted = params["accepted"]
-    end
-    unless params["due_date"].blank?
-      entry.due_date = params["due_date"]
-    end
-    unless params["locations_id"].blank?
-      entry.locations_id = params["locations_id"]
-    end
-    unless params["application_details"].blank?
-      entry.application_details = params["application_details"]
-    end
+    entry = Application.find(params["x"].to_i)
+    # unless params["events_id"].blank?
+  #     entry.events_id = params["events_id"]
+  #   end
+  #   unless params["application_fee"].blank?
+  #     entry.application_fee = params["applications_fee"]
+  #   end
+  #   unless params["event_fee"].blank?
+  #     entry.event_fee = params["event_fee"]
+  #   end
+  #   unless params["submitted"].blank?
+  #     entry.submitted = params["submitted"]
+  #   end
+  #   unless params["accepted"].blank?
+  #     entry.accepted = params["accepted"]
+  #   end
+  #   unless params["due_date"].blank?
+  #     entry.due_date = params["due_date"]
+  #   end
+  #   unless params["locations_id"].blank?
+  #     entry.locations_id = params["locations_id"]
+  #   end
+  #   unless params["application_details"].blank?
+  #     entry.application_details = params["application_details"]
+  #   end
   entry.save
   erb :"applications/update_success"
 end

@@ -20,34 +20,6 @@ class Application
     @application_details = options["application_details"]
   end
   
-  # Finds an existing entry in the table and creates an object for it.
-  #
-  # id - Integer, the music id
-  #
-  # Returns a new Object. 
-  def self.find_as_objects(id)
-    result = self.find(id).first
-    
-    Application.new(result)
-  end
-  
-  # Allows all the rows of a certain column to be read.
-  #
-  # field_name - String, the column name to search for the specified id
-  # id         - Integer, the id to be read.
-  #
-  # Returns an Array of objects of all the entries in a specified column.
-  def self.where_find_rows(field_name, id)
-    results = self.find_rows(field_name, id)
-    results_as_objects = []
-
-    results.each do |result_hash|
-    results_as_objects << Application.new(result_hash)
-    end
-
-    return results_as_objects
-  end
-  
   # Get all application records, sorted by due_date, from the database.
   #
   # Returns an Array containing Application objects.
@@ -67,8 +39,8 @@ class Application
   #
   # Returns self, an object.
   def save
-    CONNECTION.execute("UPDATE applications SET events_id = #{@events_id}, application_fee = #{@application_fee}, event_fee = #{@event_fee},
-    submitted = '#{@submitted}', accepted = '#{@accepted}', due_date = '#{@due_date}', locations_id = #{@locations_id}, application_details = '#{@application_details}'
+    CONNECTION.execute("UPDATE applications SET events_id = #{self.events_id}, application_fee = #{self.application_fee}, event_fee = #{self.event_fee},
+    submitted = '#{self.submitted}', accepted = '#{self.accepted}', due_date = '#{self.due_date}', locations_id = #{self.locations_id}, application_details = '#{self.application_details}'
     WHERE id = #{@id};")
      return self
   end
