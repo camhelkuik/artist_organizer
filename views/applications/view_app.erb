@@ -1,0 +1,9 @@
+<h2>Here is the application you requested:</h2>
+
+<ul>
+  <% @view.each do |app| %>
+  <li><%= app.id %>. <%= app.events_id %> - <%= app.application_fee %> - <%= app.event_fee %> - <%= app.submitted %> - <%= app.accepted %> - <%= app.due_date %> - <%= app.locations_id %> - <%= app.application_details %></li>
+  <% end %>
+</ul>
+
+<a href="/home">Main Menu</a>

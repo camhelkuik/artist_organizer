@@ -5,8 +5,8 @@ class Application
   extend DatabaseClassMethods
   include DatabaseInstanceMethods
   
-  attr_accessor :application_fee, :event_fee, :submitted, :accepted, :due_date, :application_details
-  attr_reader :id, :events_id, :locations_id
+  attr_accessor :application_fee, :event_fee, :submitted, :accepted, :due_date, :application_details, :events_id, :locations_id
+  attr_reader :id
   
   def initialize(options ={})
     @id = options["id"]

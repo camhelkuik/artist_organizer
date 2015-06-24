@@ -1,6 +1,7 @@
 require "pry"
 require "sinatra"
 require "sinatra/reloader"
+require 'active_support/core_ext/object/blank'
 
 #SQL/databse
 require "sqlite3"
