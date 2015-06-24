@@ -10,5 +10,5 @@ require_relative "database_setup.rb"
 require_relative "models/application.rb"
 
 #Controllers
-require_relative "controllers.main.rb"
-require_relative "controllers.applications.rb"
+require_relative "controllers/main.rb"
+require_relative "controllers/applications.rb"
