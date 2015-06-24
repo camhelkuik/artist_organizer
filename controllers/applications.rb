@@ -21,9 +21,9 @@ get "/view_application_list/:x" do
   erb :"applications/view_app_list"
 end
 
-# Can't load this method can't run .each
+# Can't run .each
 get "/view_app/:x" do
-  @view = Application.find_as_objects(params["x"].to_i)
+  @view = Application.where_find_rows("id", params["x"].to_i)
   erb :"applications/view_app"
 end
 #------------------------------------------------------------------------------
@@ -37,7 +37,6 @@ get "/update_form/:x" do
   erb :"applications/update_form"
 end
 
-# Can't load this method
 get "/change_app/:x" do
     entry = Application.find_as_objects(params["x"].to_i)
     unless params["events_id"].blank?

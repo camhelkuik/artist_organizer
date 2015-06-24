@@ -13,7 +13,7 @@ class Application
     @events_id = options["events_id"]
     @application_fee = options["application_fee"]
     @event_fee = options["event_fee"]
-    @submitted = options["sumitted"]
+    @submitted = options["submitted"]
     @accepted = options["accepted"]
     @due_date = options["due_date"]
     @locations_id = options["locations_id"]
@@ -37,7 +37,7 @@ class Application
   # id         - Integer, the id to be read.
   #
   # Returns an Array of objects of all the entries in a specified column.
-  def self.find_rows(field_name, id)
+  def self.where_find_rows(field_name, id)
     results = self.find_rows(field_name, id)
     results_as_objects = []
 
