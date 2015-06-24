@@ -63,3 +63,19 @@ get "/change_app/:x" do
   entry.save
   erb :"applications/update_success"
 end
+#--------------------------------------------------------------------------------
+# Delete applications
+#--------------------------------------------------------------------------------
+get "/delete_application" do
+  erb :"applications/delete_app_list"
+end
+
+get "/delete_app/:x" do
+  @d = Application.new("id" => params["x"].to_i)
+    
+  if @d.delete_app
+    erb :"delete_success"
+  else
+    erb :"delete_failure"
+  end
+end

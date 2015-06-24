@@ -1,0 +1,7 @@
+<h2>Click the application you would like to delete:</h2>
+
+<ul>
+  <% Application.all_sorted_by_date.each do |app| %>
+  <li><a href="/delete_app/<%= app.id %>"> <%= app.events_id %> - <%= app.application_fee %> - <%= app.event_fee %> - <%= app.submitted %> - <%= app.accepted %> - <%= app.due_date %> - <%= app.locations_id %> - <%= app.application_details %></a></li>
+  <% end %>
+</ul>
