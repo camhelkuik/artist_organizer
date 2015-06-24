@@ -73,9 +73,6 @@ class Application
      return self
   end
   
-  def to_s
-    s = id, events_id, application_fee, event_fee, submitted, accepted, due_date, locations_id, application_details
-  end
   # Deletes a row if the value is only equal to "no".
   #
   # Returns a boolean
