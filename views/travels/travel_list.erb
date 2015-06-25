@@ -2,7 +2,7 @@
 
 <ul>
   <% Travel.sorted_event.each do |travel| %>
-  <li><a href="/view_travel/<%= travel.id %>"> <%= travel.id %>. <%= travel.events_id %> -  <%= app.locations_id %></a></li>
+  <li><a href="/view_travel/<%= travel.id %>"> <%= travel.id %>. <%= travel.events_id %> -  <%= travel.locations_id %></a></li>
   <% end %>
 </ul>
 

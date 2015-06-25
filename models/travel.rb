@@ -39,7 +39,7 @@ class Travel
   # Returns self, an object.
   def save
     CONNECTION.execute("UPDATE travels SET events_id = #{self.events_id}, locations_id = #{self.locations_id},
-    transportation = #{self.transportation}, departure_info = #{self.departure_info}, arrival_info = '#{self.arrival_info}', 
+    transportation = '#{self.transportation}', departure_info = '#{self.departure_info}', arrival_info = '#{self.arrival_info}', 
     hotel_info = '#{self.hotel_info}', check_in_time = '#{self.check_in_time}' WHERE id = #{self.id};")
      
      return self

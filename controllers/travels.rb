@@ -22,7 +22,7 @@ get "/travel_list" do
   erb :"travels/travel_list"
 end
 
-get "/view_travel" do
+get "/view_travel/:x" do
   @view = Travel.find_rows("id", params["x"].to_i)
   erb :"travels/view_travel"
 end
