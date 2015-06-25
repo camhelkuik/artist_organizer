@@ -2,7 +2,7 @@
 
 <ul>
   <% Event.all_sorted_by_date.each do |event| %>
-  <li><a href="/view_event/<%= event.id %>"> <%= event.id %>. <%= event.name %> - <%= event.applications_id %> - <%= event.date %>
+  <li><a href="/view_event/<%= event.id %>"> <%= event.id %>. <%= event.name %> - <%= event.applications_id %> - <%= event.event_date %>
   </a></li>
   <% end %>
 </ul>

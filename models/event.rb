@@ -5,17 +5,17 @@ class Event
   extend DatabaseClassMethods
   include DatabaseInstanceMethods
   
-  attr_accessor :name, :applications_id, :date, :check_in_time, :location_id, :ammenities, :contact_email, :contact_phone
+  attr_accessor :name, :applications_id, :event_date, :check_in_time, :locations_id, :ammenities, :contact_email, :contact_phone
   attr_reader :id
   
   def initialize(options ={})
     @id = options["id"]
     @name = options["name"]
     @applications_id = options["applications_id"]
-    @date = options["date"]
+    @event_date = options["event_date"]
     @check_in_time = options["check_in_time"]
-    @location_id = options["location_id"]
-    @ammentities = options["ammentities"]
+    @locations_id = options["locations_id"]
+    @ammenities = options["ammenities"]
     @contact_email = options["contact_email"]
     @contact_phone = options["contact_phone"]
   end
@@ -24,7 +24,7 @@ class Event
   #
   # Returns an Array containing Application objects.
   def self.all_sorted_by_date
-    results = CONNECTION.execute('SELECT * FROM events ORDER BY date ASC;')
+    results = CONNECTION.execute('SELECT * FROM events ORDER BY event_date ASC;')
     
     results_as_objects = []
     
@@ -39,8 +39,8 @@ class Event
   #
   # Returns self, an object.
   def save
-    CONNECTION.execute("UPDATE events SET name = '#{self.name}', applications_id = #{self.applications_id},date = '#{self.date}',
-    check_in_time = '#{self.check_in_time}', location_id = #{self.location_id}, ammenities = '#{self.ammenities}', 
+    CONNECTION.execute("UPDATE events SET name = '#{self.name}', applications_id = #{self.applications_id}, event_date = '#{self.event_date}',
+    check_in_time = '#{self.check_in_time}', locations_id = #{self.locations_id}, ammenities = '#{self.ammenities}', 
      contact_email = '#{self.contact_email}', contact_phone = '#{self.contact_phone}' WHERE id = #{self.id};")
      
      return self
