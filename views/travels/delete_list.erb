@@ -1,0 +1,7 @@
+<h2>Click the travel plans you wish to delete:</h2>
+
+<ul>
+  <% Travel.sorted_event.each do |travel| %>
+  <li><a href="/delete_travel/<%= travel.id %>"> <%= travel.id %> - <%= travel.events_id %> - <%= travel.locations_id %></a></li>
+  <% end %>
+</ul>

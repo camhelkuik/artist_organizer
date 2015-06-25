@@ -1,0 +1,9 @@
+<h2>Here is the travel plans you requested:</h2>
+
+<ul>
+   <% @view.each do |travel| %>
+   <li><%= travel.id %>. <%= travel.events_id %> - <%= travel.locations_id %> - <%= travel.transportation %> - <%= travel.departure_info %> - <%= travel.arrival_info %> - <%= travel.hotel_info %> - <%= travel.check_in_time %></li>
+   <% end %>
+</ul>
+
+<a href="/home">Main Menu</a>

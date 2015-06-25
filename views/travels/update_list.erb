@@ -1,0 +1,7 @@
+<h2>Click the travel plans you wish to update:</h2>
+
+<ul>
+  <% Travel.sorted_event.each do |travel| %>
+  <li><a href="/update_form/<%= travel.id %>"> <%= travel.id %> - <%= travel.events_id %> - <%= travel.locations_id %></a></li>
+  <% end %>
+</ul>
