@@ -40,13 +40,13 @@ end
 
 get "/change_app/:x" do
   @entry = Application.find(params["x"].to_i)
-      @entry = "#{params[events_id]}" 
-      @entry = "#{params[application_fee]}"
-      @entry = "#{params[event_fee]}"
-      @entry = "#{params['submitted']}"
-      @entry = "#{params['accepted']}"
-      @entry = "#{params[locations_id]}"
-      @entry = "#{params['application_details']}"    
+  @entry.events_id = params["events_id"] 
+  @entry.application_fee = params["application_fee"]
+  @entry.event_fee = params["event_fee"]
+  @entry.submitted = params["submitted"]
+  @entry.accepted = params["accepted"]
+  @entry.locations_id = params["locations_id"]
+  @entry.application_details = params["application_details"]    
   @entry.save
   erb :"applications/update_success"
 end
