@@ -30,7 +30,7 @@ class Location
    #
    # Returns self, an object.
    def save
-     CONNECTION.execute("UPDATE locations SET city = '#{@city}', state = '#{@state}', address = '#{@address}' WHERE id = #{@id};")
+     CONNECTION.execute("UPDATE locations SET city = '#{self.city}', state = '#{self.state}', address = '#{self.address}' WHERE id = #{self.id};")
       return self
    end
   
@@ -38,7 +38,7 @@ class Location
   #
   # Returns a Boolean.
   def delete_location
-    if Event.where_find_rows("locations_id", @id) == []
+    if Event.where_find_rows("locations_id", self.id) == []
       self.delete
     else
       false
