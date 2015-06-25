@@ -1,0 +1,11 @@
+<h2>Click the event you would like to view:</h2>
+
+<ul>
+  <% Event.all_sorted_by_date.each do |event| %>
+  <li><a href="/view_event/<%= event.id %>"> <%= event.id %>. <%= event.name %> - <%= event.application_id %> - <%= event.date %>
+  </a></li>
+  <% end %>
+</ul>
+
+
+  

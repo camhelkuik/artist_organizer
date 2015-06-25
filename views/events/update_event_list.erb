@@ -1,0 +1,7 @@
+<h2>Click the event you wish to update:</h2>
+
+<ul>
+  <% Event.all_sorted_by_date.each do |event| %>
+  <li><a href="/update_form/<%= event.id %>"> <%= event.name %> - <%= event.application_id %> - <%= event.date %></a></li>
+  <% end %>
+</ul>

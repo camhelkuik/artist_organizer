@@ -1,0 +1,9 @@
+<h2>Here is the event you requested:</h2>
+
+<ul>
+   <% @view.each do |event| %>
+   <li><%= event.id %>. <%= event.name %> - <%= event.application_id %> - <%= event.date %> - <%= event.check_in_time %> - <%= event.locations_id %> - <%= event.ammenities %> - <%= event.contact_email %> - <%= event.contact_phone %></li>
+   <% end %>
+</ul>
+
+<a href="/home">Main Menu</a>
