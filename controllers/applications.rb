@@ -34,14 +34,20 @@ get "/update_application" do
 end
 
 get "/update_form/:x" do
+  @entry = Application.find(params["x"].to_i)
   erb :"applications/update_form"
 end
 
 get "/change_app/:x" do
-  column = params["edit"]
-  entry = Application.find(params["x"].to_i)
-  entry = params["new_input"]
-  entry.save
+  @entry = Application.find(params["x"].to_i)
+      @entry = "#{params[events_id]}" 
+      @entry = "#{params[application_fee]}"
+      @entry = "#{params[event_fee]}"
+      @entry = "#{params['submitted']}"
+      @entry = "#{params['accepted']}"
+      @entry = "#{params[locations_id]}"
+      @entry = "#{params['application_details']}"    
+  @entry.save
   erb :"applications/update_success"
 end
 #--------------------------------------------------------------------------------

@@ -1,6 +1,23 @@
 <h2>Please enter the new application information:</h2>
 
-<form action="/change_app/<%= params["x"] %>">
+<% if @entry["id"] %>
+<form action="/save_application">
+  <% else %>
+<form action="/new">
+  <% end %>
+  <input type="number" placeholder="Enter event ID" name="events_id" value="<%= @entry["events_id"] %>">
+  <input type="number" placeholder="Enter application fee" name="application_fee" value="<%= @entry["application_fee"] %>">
+  <input type="number" placeholder="Enter event fee" name="event_fee" value="<%= @entry["event_fee"] %>">
+  <input type="text" placeholder="Submitted? Enter yes or no" name="submitted" value="<%= @entry["submitted"] %>">
+  <input type="text" placeholder="Accepted? Enter yes, NA, or no" name="accepted" value="<%= @entry["accepted"] %>">
+  <input type="text" placeholder="Enter due date" name="due_date" value="<%= @entry["due_date"] %>">
+  <input type="number" placeholder="Enter location ID" name="locations_id" value="<%= @entry["locations_id"] %>">
+  <input type="text" placeholder="Enter application details" name="application_details" value="<%= @entry["application_details"] %>">
+  
+  <input type="submit">
+</form>
+
+<!--><form action="/change_app/<%# params["x"] %>">
   <select name="edit">
     <option value="application_fee">application_fee</option>
     <option value="event_fee">event fee</option>
@@ -13,5 +30,5 @@
    <input type="text" name="new_input" placeholder="new info">
      
     <input type="submit">
-</form>
+</form>-->
 
