@@ -24,15 +24,30 @@ class Location
      result = self.find(id).first
     
      Location.new(result)
-   end
+  end
    
-   # Allows information that was changed in ruby to be saved to SQL.
-   #
-   # Returns self, an object.
-   def save
-     CONNECTION.execute("UPDATE locations SET city = '#{self.city}', state = '#{self.state}', address = '#{self.address}' WHERE id = #{self.id};")
-      return self
-   end
+  # Get all location records, sorted by city, from the database.
+  #
+  # Returns an Array containing location objects.
+  def sorted
+    results = CONNECTION.execute('SELECT * FROM locations ORDER BY city ASC;')
+    
+    results_as_objects = []
+    
+    results.each do |result_hash|
+     results_as_objects << Location.new(result_hash)
+    end
+    
+    return results_as_objects  
+  end
+  
+  # Allows information that was changed in ruby to be saved to SQL.
+  #
+  # Returns self, an object.
+  def save
+    CONNECTION.execute("UPDATE locations SET city = '#{self.city}', state = '#{self.state}', address = '#{self.address}' WHERE id = #{self.id};")
+     return self
+  end
   
   # Deletes a row from the table.
   #

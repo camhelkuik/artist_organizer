@@ -1,0 +1,9 @@
+<h2>Here is the location you requested:</h2>
+
+<ul>
+   <% @view.each do |location| %>
+   <li><%= location.id %>. <%= location.city %> - <%= location.state %> - <%= location.address %></li>
+   <% end %>
+</ul>
+
+<a href="/home">Main Menu</a>

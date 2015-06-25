@@ -1,4 +1,4 @@
-get "/location_menu" do
+get "location_menu" do
   erb :"locations/location_menu"
 end
 #-----------------------------------
@@ -10,5 +10,33 @@ end
 
 get "/save_location" do
   @new_entry = Location.new({"city" => params["city"], "state" => params["state"], "address" => params["address"]})
-  erb :"save_success"
+  erb :"locations/save_success"
+end
+#------------------------------------------
+# Lists all of the locations Aplhabetically
+#------------------------------------------
+get "/list_locations" do
+  erb :"locations/locations_list"
+end
+
+get "/view_location" do
+  @view = Locations.find_rows("id", params["x"].to_i)
+  erb :"locations/view_location"
+end
+
+#--------------------------------------------
+# Delete locations
+#--------------------------------------------
+get "delete_location_list" do
+  erb :"locations/delete_list"
+end
+
+get "delete_location" do
+  @d = Location.new("id" => params["x"].to_i)
+  @d.delete
+  # if @d.delete_location
+#     erb :"delete_success"
+#   else
+#     erb :"delete_failure"
+#   end
 end

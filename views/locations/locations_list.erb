@@ -1,0 +1,7 @@
+<h2>Here are your locations in alphabetical order by City:</h2>
+
+<ul>
+  <% Location.sorted.each do |location| %>
+  <li><a href="/view_location/<%= location.id %>"> <%= location.city %> - <%= location.state %> - <%= location.address %></a></li>
+  <% end %>
+</ul>

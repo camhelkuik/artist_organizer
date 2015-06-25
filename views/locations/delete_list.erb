@@ -1,0 +1,7 @@
+<h2>Click the location you would like to delete:</h2>
+
+<ul>
+  <% Location.sorted.each do |location| %>
+  <li><a href="/delete_location/<%= location.id %>"> <%= location.city %> - <%= location.state %> - <%= location.address %></a></li>
+  <% end %>
+</ul>
