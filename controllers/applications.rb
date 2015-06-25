@@ -21,7 +21,6 @@ get "/view_application_list/:x" do
   erb :"applications/view_app_list"
 end
 
-# Can't run .each
 get "/view_app/:x" do
   @view = Application.find_rows("id", params["x"].to_i)
   erb :"applications/view_app"
