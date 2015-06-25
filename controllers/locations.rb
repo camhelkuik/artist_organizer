@@ -9,7 +9,7 @@ get "/add_location" do
 end
 
 get "/save_location" do
-  @new_entry = Location.new({"city" => params["city"], "state" => params["state"], "address" => params["address"]})
+  @new_entry = Location.add({"city" => params["city"], "state" => params["state"], "address" => params["address"]})
   erb :"locations/save_success"
 end
 #------------------------------------------
@@ -27,11 +27,11 @@ end
 #--------------------------------------------
 # Delete locations
 #--------------------------------------------
-get "delete_location_list" do
+get "/delete_location_list" do
   erb :"locations/delete_list"
 end
 
-get "delete_location" do
+get "/delete_location" do
   @d = Location.new("id" => params["x"].to_i)
   @d.delete
   # if @d.delete_location

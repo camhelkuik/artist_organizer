@@ -29,7 +29,7 @@ class Location
   # Get all location records, sorted by city, from the database.
   #
   # Returns an Array containing location objects.
-  def sorted
+  def self.sorted
     results = CONNECTION.execute('SELECT * FROM locations ORDER BY city ASC;')
     
     results_as_objects = []

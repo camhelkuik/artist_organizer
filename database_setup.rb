@@ -9,6 +9,6 @@ submitted TEXT, accepted TEXT, due_date TEXT, locations_id INTEGER, application_
 CONNECTION.execute("CREATE TABLE IF NOT EXISTS travels (id INTEGER PRIMARY KEY, events_id INTEGER, locations_id INTEGER, transportation TEXT, 
 departure_info TEXT, arrival_info TEXT, hotel_info TEXT, check_in_time TEXT);")
 
-CONNECTION.execute("CREATE TABLE IF NOT EXISTS locations (id INTEGER PRIMARY KEY, city TEXT, state TEXT, adderss TEXT);")
+CONNECTION.execute("CREATE TABLE IF NOT EXISTS locations (id INTEGER PRIMARY KEY, city TEXT, state TEXT, address TEXT);")
 
 CONNECTION.results_as_hash = true
