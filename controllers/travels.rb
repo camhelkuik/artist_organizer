@@ -59,11 +59,11 @@ end
 
 get "/delete_travel/:x" do
   @d = Travel.new("id" => params["x"].to_i)
-  @d.delete
-  erb :"travels/delete_success"
-  # if @d.delete_app
- #    erb :"delete_success"
- #  else
- #    erb :"delete_failure"
- #  end
+  # @d.delete
+ #  erb :"travels/delete_success"
+  if @d.delete_app
+    erb :"delete_success"
+  else
+    erb :"delete_failure"
+  end
 end

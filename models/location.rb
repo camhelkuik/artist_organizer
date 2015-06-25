@@ -53,7 +53,7 @@ class Location
   #
   # Returns a Boolean.
   def delete_location
-    if Event.where_find_rows("locations_id", self.id) == []
+    if Event.find_rows("locations_id", @id) == []
       self.delete
     else
       false

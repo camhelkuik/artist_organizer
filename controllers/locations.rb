@@ -33,11 +33,11 @@ end
 
 get "/delete_location/:x" do
   @d = Location.new("id" => params["x"].to_i)
-  @d.delete
-  erb :"locations/delete_success"
-  # if @d.delete_location
-#     erb :"delete_success"
-#   else
-#     erb :"delete_failure"
-#   end
+  # @d.delete
+#   erb :"locations/delete_success"
+  if @d.delete_location
+    erb :"delete_success"
+  else
+    erb :"delete_failure"
+  end
 end

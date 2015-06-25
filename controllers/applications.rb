@@ -58,11 +58,11 @@ end
 
 get "/delete_app/:x" do
   @d = Application.new("id" => params["x"].to_i)
-  @d.delete
-  erb :"applications/delete_success"
-  # if @d.delete_app
- #    erb :"delete_success"
- #  else
- #    erb :"delete_failure"
- #  end
+  # @d.delete
+ #  erb :"applications/delete_success"
+  if @d.delete_app
+    erb :"delete_success"
+  else
+    erb :"delete_failure"
+  end
 end
