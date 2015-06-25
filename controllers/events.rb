@@ -9,7 +9,7 @@ get "/add_event" do
 end
 
 get "/save_event" do
-  @new_entry = Event.add({"name" => params["name"], "application_id" => params["application_id"], "date" => params["date"],
+  @new_entry = Event.add({"name" => params["name"], "applications_id" => params["applications_id"], "date" => params["date"],
    "check_in_time" => params["check_in_time"], "locations_id" => params["locations_id"], "ammenities" => params["ammenities"],
     "contact_email" => params["contact_email"],"contact_phone" => params["contact_phone"]})
    erb :"events/event_success"
@@ -40,7 +40,7 @@ end
 get "/change_event/:x" do
   @entry = Event.find(params["x"].to_i)
   @entry.name = params["name"] 
-  @entry.application_id = params["application_id"]
+  @entry.applications_id = params["applications_id"]
   @entry.date = params["date"]
   @entry.check_in_time = params["check_in_time"]
   @entry.locations_id = params["locations_id"]

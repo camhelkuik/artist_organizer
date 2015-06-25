@@ -2,6 +2,6 @@
 
 <ul>
   <% Event.all_sorted_by_date.each do |event| %>
-  <li><a href="/update_form/<%= event.id %>"> <%= event.name %> - <%= event.application_id %> - <%= event.date %></a></li>
+  <li><a href="/update_form/<%= event.id %>"> <%= event.name %> - <%= event.applications_id %> - <%= event.date %></a></li>
   <% end %>
 </ul>
