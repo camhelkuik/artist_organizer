@@ -75,11 +75,11 @@ module DatabaseClassMethods
     results = CONNECTION.execute("SELECT * FROM #{table_name} WHERE #{field_name} = #{record_id}")
     results_as_objects = []
     
-      results.each do |result_hash|
-        results_as_objects << self.new(result_hash)
-      end
+    results.each do |result_hash|
+     results_as_objects << self.new(result_hash)
+    end
     
-      return results_as_objects 
+    return results_as_objects 
   end
   
   # Get multiple rows based on user inputed String.
@@ -94,11 +94,11 @@ module DatabaseClassMethods
     results = CONNECTION.execute("SELECT * FROM #{table_name} WHERE #{field_name} = '#{input}'")
     results_as_objects = []
     
-      results.each do |result_hash|
-        results_as_objects << self.new(result_hash)
-      end
+    results.each do |result_hash|
+     results_as_objects << self.new(result_hash)
+    end
     
-      return results_as_objects
+    return results_as_objects
   end
 
 end

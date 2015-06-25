@@ -34,36 +34,21 @@ get "/update_application" do
 end
 
 get "/update_form/:x" do
+  @entry = Application.find(params["x"].to_i)
   erb :"applications/update_form"
 end
 
 get "/change_app/:x" do
-    entry = Application.find(params["x"].to_i)
-    # unless params["events_id"].blank?
-  #     entry.events_id = params["events_id"]
-  #   end
-  #   unless params["application_fee"].blank?
-  #     entry.application_fee = params["applications_fee"]
-  #   end
-  #   unless params["event_fee"].blank?
-  #     entry.event_fee = params["event_fee"]
-  #   end
-  #   unless params["submitted"].blank?
-  #     entry.submitted = params["submitted"]
-  #   end
-  #   unless params["accepted"].blank?
-  #     entry.accepted = params["accepted"]
-  #   end
-  #   unless params["due_date"].blank?
-  #     entry.due_date = params["due_date"]
-  #   end
-  #   unless params["locations_id"].blank?
-  #     entry.locations_id = params["locations_id"]
-  #   end
-  #   unless params["application_details"].blank?
-  #     entry.application_details = params["application_details"]
-  #   end
-  entry.save
+  @entry = Application.find(params["x"].to_i)
+      @entry.events_id = params["events_id"]
+      @entry.application_fee = params["applications_fee"]
+      @entry.event_fee = params["event_fee"]
+      @entry.submitted = params["submitted"]
+      @entry.accepted = params["accepted"]
+      @entry.due_date = params["due_date"]
+      @entry.locations_id = params["locations_id"]
+      @entry.application_details = params["application_details"]
+  @entry.save
   erb :"applications/update_success"
 end
 #--------------------------------------------------------------------------------

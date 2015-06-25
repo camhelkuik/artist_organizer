@@ -29,7 +29,7 @@ class Application
     results_as_objects = []
     
     results.each do |result_hash|
-      results_as_objects << Application.new(result_hash)
+     results_as_objects << Application.new(result_hash)
     end
     
     return results_as_objects
@@ -41,7 +41,8 @@ class Application
   def save
     CONNECTION.execute("UPDATE applications SET events_id = #{self.events_id}, application_fee = #{self.application_fee}, event_fee = #{self.event_fee},
     submitted = '#{self.submitted}', accepted = '#{self.accepted}', due_date = '#{self.due_date}', locations_id = #{self.locations_id}, application_details = '#{self.application_details}'
-    WHERE id = #{@id};")
+    WHERE id = #{self.id};")
+     
      return self
   end
   
