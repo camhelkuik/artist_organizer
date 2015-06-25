@@ -57,8 +57,8 @@ get "/delete_list" do
   erb :"travels/delete_list"
 end
 
-get "/delete_travel" do
-  @d = travel.new("id" => params["x"].to_i)
+get "/delete_travel/:x" do
+  @d = Travel.new("id" => params["x"].to_i)
   @d.delete
   erb :"travels/delete_success"
   # if @d.delete_app

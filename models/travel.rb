@@ -5,7 +5,7 @@ class Travel
   extend DatabaseClassMethods
   include DatabaseInstanceMethods
   
-  attr_accessor :events_id, :locations_id, :transprotation, :departure_info, :arrival_info, :hotel_info, :check_in_time
+  attr_accessor :events_id, :locations_id, :transportation, :departure_info, :arrival_info, :hotel_info, :check_in_time
   attr_reader :id
   
   def initialize(options ={})
@@ -23,7 +23,7 @@ class Travel
   #
   # Returns an Array containing travel objects.
   def self.sorted_event
-    results = CONNECTION.execute('SELECT * FROM travel ORDER BY events_id ASC;')
+    results = CONNECTION.execute('SELECT * FROM travels ORDER BY events_id ASC;')
     
     results_as_objects = []
     

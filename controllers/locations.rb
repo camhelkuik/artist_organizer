@@ -19,8 +19,8 @@ get "/list_locations" do
   erb :"locations/locations_list"
 end
 
-get "/view_location" do
-  @view = Locations.find_rows("id", params["x"].to_i)
+get "/view_location/:x" do
+  @view = Location.find_rows("id", params["x"].to_i)
   erb :"locations/view_location"
 end
 
@@ -31,9 +31,10 @@ get "/delete_location_list" do
   erb :"locations/delete_list"
 end
 
-get "/delete_location" do
+get "/delete_location/:x" do
   @d = Location.new("id" => params["x"].to_i)
   @d.delete
+  erb :"locations/delete_success"
   # if @d.delete_location
 #     erb :"delete_success"
 #   else
