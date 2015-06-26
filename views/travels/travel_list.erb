@@ -1,10 +1,20 @@
 <h2>Click the travel plans you would like to view:</h2>
 
-<ul>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Event ID</th>
+      <th>Location ID</th>
+    </tr>
   <% Travel.sorted_event.each do |travel| %>
-  <li><a href="/view_travel/<%= travel.id %>"> <%= travel.id %>. <%= travel.events_id %> -  <%= travel.locations_id %></a></li>
-  <% end %>
-</ul>
-
-
-  
+    <tr>
+      <td>
+        <a href="/view_travel/<%= travel.id %>"> 
+          <%= travel.id %>
+        </a>
+      </td>
+      <td><%= travel.events_id %></td>
+      <td><%= travel.locations_id %></td>
+    </tr>
+    <% end %>
+  </table>

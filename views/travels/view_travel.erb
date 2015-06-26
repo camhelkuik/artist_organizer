@@ -1,9 +1,28 @@
 <h2>Here is the travel plans you requested:</h2>
 
-<ul>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Event ID</th>
+      <th>Location ID</th>
+      <th>Transportation</th>
+      <th>Departure Info</th>
+      <th>Arrival Info</th>
+      <th>Hotel Info</th>
+      <th>Check In Time</th>
+    </tr>
    <% @view.each do |travel| %>
-   <li><%= travel.id %>. <%= travel.events_id %> - <%= travel.locations_id %> - <%= travel.transportation %> - <%= travel.departure_info %> - <%= travel.arrival_info %> - <%= travel.hotel_info %> - <%= travel.check_in_time %></li>
-   <% end %>
-</ul>
+    <tr>
+      <td><%= travel.id %></td>
+      <td><%= travel.events_id %></td>
+      <td><%= travel.locations_id %></td>
+      <td><%= travel.transportation %></td>
+      <td><%= travel.departure_info %></td>
+      <td><%= travel.arrival_info %></td>
+      <td><%= travel.hotel_info %></td>
+      <td><%= travel.check_in_time %></td>
+    </tr>
+    <% end %>
+  </table>
 
 <a href="/home">Main Menu</a>

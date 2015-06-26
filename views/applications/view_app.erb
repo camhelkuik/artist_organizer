@@ -1,9 +1,31 @@
 <h2>Here is the application you requested:</h2>
 
-<ul>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Event Id</th>
+      <th>Application Fee</th>
+      <th>Event Fee</th>
+      <th>Submitted?</th>
+      <th>Accepted?</th>
+      <th>Due Date</th>
+      <th>Location Id</th>
+      <th>Application Details</th>  
+    </tr>
    <% @view.each do |app| %>
-   <li><%= app.id %>. <%= app.events_id %> - <%= app.application_fee %> - <%= app.event_fee %> - <%= app.submitted %> - <%= app.accepted %> - <%= app.due_date %> - <%= app.locations_id %> - <%= app.application_details %></li>
-   <% end %>
-</ul>
+    <tr>
+      <td><%= app.id %></td>
+      <td><%= app.events_id %></td>
+      <td><%= app.application_fee %></td>
+      <td><%= app.event_fee %></td>
+      <td><%= app.submitted %></td>
+      <td><%= app.accepted %></td>
+      <td><%= app.due_date %></td>
+      <td><%= app.locations_id %></td>
+      <td><%= app.application_details %></td>
+    </tr>
+    <% end %>
+  </table>
 
 <a href="/home">Main Menu</a>

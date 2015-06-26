@@ -1,9 +1,20 @@
 <h2>Here is the location you requested:</h2>
 
-<ul>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Address</th>
+  </tr>
    <% @view.each do |location| %>
-   <li><%= location.id %>. <%= location.city %> - <%= location.state %> - <%= location.address %></li>
-   <% end %>
-</ul>
+  <tr>
+    <td><%= location.id %></td>
+    <td><%= location.city %></td>
+    <td><%= location.state %></td>
+    <td><%= location.address %></td>
+  </tr>
+  <% end %>
+</table>
 
 <a href="/home">Main Menu</a>
