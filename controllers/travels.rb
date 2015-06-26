@@ -11,7 +11,7 @@ get "/save_travel" do
     "departure_info" => params["departure_info"], "arrival_info" => params["arrival_info"], "hotel_info" => params["hotel_info"], 
     "check_in_time" => params["check_in_time"]})
     
-    erb :"travels/add_success"
+    erb :"main/add_success"
 end
 #----------------------------------
 # View Travel Plans
@@ -46,7 +46,7 @@ get "/change_travel/:x" do
   @entry.hotel_info = params["hotel_info"]
   @entry.check_in_time = params["check_in_time"]   
   @entry.save
-  erb :"travels/update_success"
+  erb :"main/update_success"
 end
 #-------------------------------------------
 # Delete travel Plans
@@ -60,8 +60,8 @@ get "/delete_travel/:x" do
   # @d.delete
  #  erb :"travels/delete_success"
   if @d.delete_app
-    erb :"delete_success"
+    erb :"main/delete_success"
   else
-    erb :"delete_failure"
+    erb :"travels/delete_failure"
   end
 end

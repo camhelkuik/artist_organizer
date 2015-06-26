@@ -10,7 +10,7 @@ get "/save_event" do
   @new_entry = Event.add({"name" => params["name"], "applications_id" => params["applications_id"], "event_date" => params["event_date"],
    "check_in_time" => params["check_in_time"], "locations_id" => params["locations_id"], "ammenities" => params["ammenities"],
     "contact_email" => params["contact_email"],"contact_phone" => params["contact_phone"]})
-   erb :"events/event_success"
+   erb :"main/add_success"
 end
 #-----------------------------------------------------------------------------
 # View events
@@ -46,7 +46,7 @@ get "/change_event/:x" do
   @entry.contact_email = params["contact_email"] 
   @entry.contact_phone = params["contact_phone"]   
   @entry.save
-  erb :"events/event_update_success"
+  erb :"main/update_success"
 end
 #--------------------------------------------------------------------------------
 # Delete applications
@@ -58,5 +58,5 @@ end
 get "/delete_event/:x" do
   @d = Event.new("id" => params["x"].to_i)
   @d.delete
-  erb :"events/delete_success"
+  erb :"main/delete_success"
 end

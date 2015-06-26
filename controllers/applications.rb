@@ -10,7 +10,7 @@ get "/save_application" do
   @new_entry = Application.add({"events_id" => params["events_id"], "application_fee" => params["application_fee"], "event_fee" => params["event_fee"],
    "submitted" => params["submitted"], "accepted" => params["accepted"], "due_date" => params["due_date"], "locations_id" => params["locations_id"], 
    "application_details" => params["application_details"]})
-   erb :"applications/app_success"
+   erb :"main/add_success"
 end
 #-----------------------------------------------------------------------------
 # View applications
@@ -45,7 +45,7 @@ get "/change_app/:x" do
   @entry.locations_id = params["locations_id"]
   @entry.application_details = params["application_details"]    
   @entry.save
-  erb :"applications/update_success"
+  erb :"main/update_success"
 end
 #--------------------------------------------------------------------------------
 # Delete applications
@@ -59,8 +59,8 @@ get "/delete_app/:x" do
   # @d.delete
  #  erb :"applications/delete_success"
   if @d.delete_app
-    erb :"delete_success"
+    erb :"main/delete_success"
   else
-    erb :"delete_failure"
+    erb :"applications/delete_failure"
   end
 end

@@ -8,7 +8,7 @@ end
 
 get "/save_location" do
   @new_entry = Location.add({"city" => params["city"], "state" => params["state"], "address" => params["address"]})
-  erb :"locations/save_success"
+  erb :"main/add_success"
 end
 #------------------------------------------
 # Lists all of the locations Aplhabetically
@@ -34,8 +34,8 @@ get "/delete_location/:x" do
   # @d.delete
 #   erb :"locations/delete_success"
   if @d.delete_location
-    erb :"delete_success"
+    erb :"main/delete_success"
   else
-    erb :"delete_failure"
+    erb :"locations/delete_failure"
   end
 end
