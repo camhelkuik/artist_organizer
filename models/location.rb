@@ -32,13 +32,7 @@ class Location
   def self.sorted
     results = CONNECTION.execute('SELECT * FROM locations ORDER BY city ASC;')
     
-    results_as_objects = []
-    
-    results.each do |result_hash|
-     results_as_objects << Location.new(result_hash)
-    end
-    
-    return results_as_objects  
+    return self.results_as_objects(results)  
   end
   
   # Allows information that was changed in ruby to be saved to SQL.

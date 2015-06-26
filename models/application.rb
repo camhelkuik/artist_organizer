@@ -26,13 +26,7 @@ class Application
   def self.all_sorted_by_date
     results = CONNECTION.execute('SELECT * FROM applications ORDER BY due_date ASC;')
     
-    results_as_objects = []
-    
-    results.each do |result_hash|
-     results_as_objects << Application.new(result_hash)
-    end
-    
-    return results_as_objects
+    return self.results_as_objects(results)
   end
   
   # Allows information that was changed in ruby to be saved to SQL.

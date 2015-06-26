@@ -8,16 +8,17 @@ module DatabaseInstanceMethods
   # field - String of the column name.
   #
   # Returns the String value of the cell in the table.
-  def get(field)
-    table_name = self.class.to_s.pluralize.underscore
-    
-    result = CONNECTION.execute("SELECT * FROM #{table_name} WHERE id = #{@id}").first
+  def get(field)    
+    result = CONNECTION.execute("SELECT * FROM #{self.table_name} WHERE id = #{@id}").first
     
     result[field]
   end
   
-  def delete
+  def table_name
     table_name = self.class.to_s.pluralize.underscore
-      CONNECTION.execute("DELETE FROM #{table_name} WHERE id = #{@id};")
+  end
+  
+  def delete
+      CONNECTION.execute("DELETE FROM #{self.table_name} WHERE id = #{@id};")
   end
 end
