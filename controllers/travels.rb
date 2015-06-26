@@ -16,7 +16,9 @@ end
 #----------------------------------
 # View Travel Plans
 #----------------------------------
+
 get "/travel_list" do
+  @travel = Travel.travel_list_info
   erb :"travels/travel_list"
 end
 

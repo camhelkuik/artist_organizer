@@ -1,20 +1,21 @@
 <h2>Click the travel plans you would like to view:</h2>
 
+
   <table>
     <tr>
       <th>ID</th>
-      <th>Event ID</th>
-      <th>Location ID</th>
+      <th>Event Name</th>
+      <th>City</th>
     </tr>
-  <% Travel.sorted_event.each do |travel| %>
+  <% @travel.each do |travel| %>
     <tr>
       <td>
-        <a href="/view_travel/<%= travel.id %>"> 
-          <%= travel.id %>
+        <a href="/view_travel/<%= travel["id"] %>"> 
+          <%= travel["id"] %>
         </a>
       </td>
-      <td><%= travel.events_id %></td>
-      <td><%= travel.locations_id %></td>
+      <td><%= travel["name"] %></td>
+      <td><%= travel.["city"] %></td>
     </tr>
     <% end %>
   </table>

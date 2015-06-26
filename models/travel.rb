@@ -19,6 +19,11 @@ class Travel
     @check_in_time = options["check_in_time"]
   end
   
+  def self.travel_list_info
+    CONNECTION.execute('SELECT travels.id, events.name, locations.city FROM travels JOIN events ON travels.events_id = events.id JOIN 
+    locations ON travels.locations_id = locations.id;')
+  end
+  
   # Get all travel records, sorted by event_id, from the database.
   #
   # Returns an Array containing travel objects.
