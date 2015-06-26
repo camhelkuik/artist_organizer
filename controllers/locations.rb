@@ -1,6 +1,4 @@
-get "/location_menu" do
-  erb :"locations/location_menu"
-end
+
 #-----------------------------------
 # Add locations
 #-----------------------------------

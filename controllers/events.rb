@@ -1,6 +1,4 @@
-get "/event_menu" do
-  erb :"events/event_menu"
-end
+
 #--------------------------
 # Add events
 #---------------------------

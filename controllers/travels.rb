@@ -1,6 +1,4 @@
-get "/travel_menu" do
-  erb :"travels/travel_menu"
-end
+
 #-----------------------------------
 # Add Travel Plans
 #-----------------------------------
