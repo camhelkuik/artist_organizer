@@ -17,11 +17,6 @@ get "/list_locations" do
   erb :"locations/locations_list"
 end
 
-get "/view_location/:x" do
-  @view = Location.find_rows("id", params["x"].to_i)
-  erb :"locations/view_location"
-end
-
 #--------------------------------------------
 # Delete locations
 #--------------------------------------------

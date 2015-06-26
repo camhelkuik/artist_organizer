@@ -10,14 +10,12 @@
   </tr>
   <% Location.sorted.each do |location| %>
   <tr>
-    <td>
-      <a href="/view_location/<%= location.id %>">
-        <%= location.id %>
-      </a>
-    </td>
+    <td><%= location.id %></td>
     <td><%= location.city %></td>
     <td><%= location.state %></td>
     <td><%= location.address %></td>
   </tr>
   <% end %>
 </table>
+
+<a href="/home">Main Menu</a>

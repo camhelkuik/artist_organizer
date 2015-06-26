@@ -27,5 +27,53 @@
   <% end %>
 </table>
 
+<h3>Application List</h3>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Event Id</th>
+    <th>Application Fee</th>
+    <th>Event Fee</th>
+    <th>Submitted?</th>
+    <th>Accepted?</th>
+    <th>Due Date</th>
+    <th>Location Id</th>
+    <th>Application Details</th>  
+  </tr>
+  <% Application.all_sorted_by_date.each do |app| %>
+  <tr>
+    <td><%= app.id %></td>
+    <td><%= app.events_id %></td>
+    <td><%= app.application_fee %></td>
+    <td><%= app.event_fee %></td>
+    <td><%= app.submitted %></td>
+    <td><%= app.accepted %></td>
+    <td><%= app.due_date %></td>
+    <td><%= app.locations_id %></td>
+    <td><%= app.application_details %></td>
+  </tr>
+  <% end %>
+</table>
+
+
+
+<h3>Location List</h3>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Address</th>
+  </tr>
+  <% Location.sorted.each do |location| %>
+  <tr>
+    <td><%= location.id %></td>
+    <td><%= location.city %></td>
+    <td><%= location.state %></td>
+    <td><%= location.address %></td>
+  </tr>
+  <% end %>
+</table>
+
 <a href="/home">Main Menu</a>
 
