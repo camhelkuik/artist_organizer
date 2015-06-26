@@ -1,7 +1,32 @@
 <h2>Click the event you wish to update:</h2>
 
-<ul>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Event Name</th>
+    <th>Application ID</th>
+    <th>Event Date</th>
+    <th>Check In Time</th>
+    <th>Location Id</th>
+    <th>Ammenities</th>
+    <th>Contact Email</th>
+    <th>Contact Phone</th>  
+  </tr>
   <% Event.all_sorted_by_date.each do |event| %>
-  <li><a href="/update_event_form/<%= event.id %>"> <%= event.name %> - <%= event.applications_id %> - <%= event.event_date %></a></li>
+  <tr>
+    <td>
+      <a href="/update_event_form/<%= event.id %>">
+        <%= event.id %>
+      </a>
+    </td>
+    <td><%= event.name %></td>
+    <td><%= event.applications_id %></td>
+    <td><%= event.event_date %></td>
+    <td><%= event.check_in_time %></td>
+    <td><%= event.locations_id %></td>
+    <td><%= event.ammenities %></td>
+    <td><%= event.contact_email %></td>
+    <td><%= event.contact_phone %></td>
+  </tr>
   <% end %>
-</ul>
+</table>
