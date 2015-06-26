@@ -30,6 +30,7 @@ end
 # Update Travel Plans
 #-----------------------------------
 get "/update_travel_list" do
+  @travel = Travel.travel_list_info
   erb :"travels/update_list"
 end
 
@@ -54,6 +55,7 @@ end
 # Delete travel Plans
 #--------------------------------------------
 get "/delete_list" do
+  @travel = Travel.travel_list_info
   erb :"travels/delete_list"
 end
 

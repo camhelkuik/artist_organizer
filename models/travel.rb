@@ -19,8 +19,11 @@ class Travel
     @check_in_time = options["check_in_time"]
   end
   
+  # Get all travel plans along with name of the event, event date and location city.
+  #
+  # Return an Array of Hashes.
   def self.travel_list_info
-    CONNECTION.execute('SELECT travels.id, events.name, locations.city FROM travels JOIN events ON travels.events_id = events.id JOIN 
+    CONNECTION.execute('SELECT travels.id, events.name, events.event_date, locations.city FROM travels JOIN events ON travels.events_id = events.id JOIN 
     locations ON travels.locations_id = locations.id;')
   end
   
