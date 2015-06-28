@@ -23,8 +23,8 @@ class Travel
   #
   # Return an Array of Hashes.
   def self.travel_list_info
-    CONNECTION.execute('SELECT travels.id, events.name, events.event_date, locations.city FROM travels JOIN events ON travels.events_id = events.id JOIN 
-    locations ON travels.locations_id = locations.id;')
+    CONNECTION.execute('SELECT travels.id, events.name, events.event_date, locations.city FROM travels JOIN events ON 
+    travels.events_id = events.id JOIN locations ON travels.locations_id = locations.id;')
   end
   
   # Get all travel records, sorted by event_id, from the database.
