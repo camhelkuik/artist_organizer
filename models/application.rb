@@ -44,7 +44,7 @@ class Application
   #
   # Returns a boolean
   def delete_app
-    if Application.find_rows("accepted", @id) == "no"
+    if Application.find_rows("accepted", @id) == "NO" || "no" ||"No"
       self.delete
     else
       false

@@ -1,6 +1,6 @@
-<h2>Please enter the new travel plan information:</h2>
+<h2 class= centered>Please enter the new travel plan information:</h2>
 
-<form action="/change_travel/<%= params["x"] %>">
+<form class= centered action="/change_travel/<%= params["x"] %>">
   <input type="number" placeholder="Enter event ID" name="events_id" value="<%= @entry.events_id %>">
   <input type="number" placeholder="Enter location ID" name="locations_id" value="<%= @entry.locations_id %>">
   <input type="text" placeholder="transportation info" name="transportation" value="<%= @entry.transportation %>">
@@ -12,8 +12,8 @@
   <input type="submit">
 </form>
 
-<h3>Event List</h3>
-<table>
+<h3 class= centered>Event List</h3>
+<table class= centered>
   <tr>
     <th>ID</th>
     <th>Event Name</th>
@@ -42,8 +42,8 @@
 
 
 
-<h3>Location List</h3>
-<table>
+<h3 class= centered>Location List</h3>
+<table class= centered>
   <tr>
     <th>ID</th>
     <th>City</th>
