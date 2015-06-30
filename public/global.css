@@ -9,8 +9,55 @@ body {
   margin: 0;
 }
 
-ul {
+nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+.centered {
+  text-align: center;
+}
+
+nav li {
+  border-style: solid;
+  border-color: #ECEBE7;
+  height: 60px;
+  font-size: 30px;
+  padding-top: 7px;
+  background-color: #8B8795;
+}
+
+.background1 {
+  background-color: #62A4B2;
+}
+
+a:link {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+div {
+  padding: 10px;
+  text-size: 30px;
+}
+
+table, th, td {
+   border: 1px solid #ECEBE7;
+   background-color: #8B8795;
+   width: 450px;
+   text-align: center;
+   margin: 10px;
 }

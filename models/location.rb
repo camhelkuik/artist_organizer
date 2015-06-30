@@ -1,3 +1,4 @@
+require "geocoder"
 require_relative "database_class_methods.rb"
 require_relative "database_instance_methods.rb"
 
@@ -37,8 +38,8 @@ class Location
     return self.results_as_objects(results)  
   end
   
-  def self.get_long_lat
-    results = Geocoder.search(address, city, state)  
+  def full_address
+    "#{self.address}, #{self.city}, #{self.state}"
   end
   
   # Allows information that was changed in ruby to be saved to SQL.

@@ -2,7 +2,6 @@ require "pry"
 require "sinatra"
 require "sinatra/reloader"
 require 'active_support/core_ext/object/blank'
-require "geocoder"
 
 #SQL/databse
 require "sqlite3"
