@@ -18,10 +18,6 @@ get "/save_location" do
   @new_entry.latitude = (long_lat[0]["location"]["lat"])
   @new_entry.save
   erb :"main/add_success"
-  
-  # result = Geocoder.search("New York, NY").map(&:geometry)
-  # north_east_lat = result[0]["viewport"]["northeast"]["lat"]
-  # north_east_lng = result[0]["viewport"]["northeast"]["lng"]
 end
 
 #------------------------------------------
