@@ -6,7 +6,7 @@ class Event
   include DatabaseInstanceMethods
   
   attr_accessor :name, :applications_id, :event_date, :check_in_time, :locations_id, :ammenities, :contact_email, :contact_phone
-  attr_reader :id
+  attr_reader :id, :errors
   
   def initialize(options ={})
     @id = options["id"]
@@ -18,6 +18,8 @@ class Event
     @ammenities = options["ammenities"]
     @contact_email = options["contact_email"]
     @contact_phone = options["contact_phone"]
+    
+    @errors = {}
   end
   
   # Get all application records, sorted by due_date, from the database.
@@ -27,6 +29,17 @@ class Event
     results = CONNECTION.execute('SELECT * FROM events ORDER BY event_date ASC;')
     
     return self.results_as_objects(results)
+  end
+  
+  #Validates the information before allowing an object to be added to the database.
+  #
+  #Returns either an empty Arrray or an Array containing an error message.
+  def valid?
+    if @event_date.nil? || @event_date == ""
+      @errors[event_date] = "The event date cannot be empty."
+    end
+      
+      return @errors.empty?
   end
   
   # Allows information that was changed in ruby to be saved to SQL.

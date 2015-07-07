@@ -6,7 +6,7 @@ class Travel
   include DatabaseInstanceMethods
   
   attr_accessor :events_id, :locations_id, :transportation, :departure_info, :arrival_info, :hotel_info, :check_in_time
-  attr_reader :id
+  attr_reader :id, :errors
   
   def initialize(options ={})
     @id = options["id"]
@@ -17,6 +17,8 @@ class Travel
     @arrival_info = options["arrival_info"]
     @hotel_info = options["hotel_info"]
     @check_in_time = options["check_in_time"]
+    
+    @errors = {}
   end
   
   # Get all travel plans along with name of the event, event date and location city.
@@ -25,6 +27,17 @@ class Travel
   def self.travel_list_info
     CONNECTION.execute('SELECT travels.id, events.name, events.event_date, locations.city FROM travels JOIN events ON 
     travels.events_id = events.id JOIN locations ON travels.locations_id = locations.id;')
+  end
+  
+  #Validates the information before allowing an object to be added to the database.
+  #
+  #Returns either an empty Arrray or an Array containing an error message.
+  def valid?
+    if @events_id.nil? || @event_id == ""
+      @errors[events_id] = "The event id cannot be empty."
+    end
+      
+      return @errors.empty?
   end
   
   # Get all travel records, sorted by event_id, from the database.

@@ -8,9 +8,9 @@ end
 
 get "/save_application" do
   @new_entry = Application.add({"events_id" => params["events_id"], "application_fee" => params["application_fee"], "event_fee" => params["event_fee"],
-   "submitted" => params["submitted"], "accepted" => params["accepted"], "due_date" => params["due_date"], "locations_id" => params["locations_id"], 
-   "application_details" => params["application_details"]})
-   erb :"main/add_success"
+    "submitted" => params["submitted"], "accepted" => params["accepted"], "due_date" => params["due_date"], "locations_id" => params["locations_id"], 
+    "application_details" => params["application_details"]})
+  erb :"main/add_success"
 end
 #-----------------------------------------------------------------------------
 # View applications

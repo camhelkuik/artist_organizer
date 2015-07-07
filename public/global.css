@@ -106,3 +106,7 @@ table, th, td {
 th {
   background-color: #6C5A80;
 }
+
+.field_error{
+  border-color: red;
+}

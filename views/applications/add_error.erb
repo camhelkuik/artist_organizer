@@ -1,0 +1,67 @@
+<h1>
+  <%=Application.errors %>
+</h1>
+
+<h2 class= centered>Please enter the new application information:</h2>
+
+<form class= centered action="/save_application">
+  <input type="number" placeholder="Enter event ID" name="events_id">
+  <input type="number" placeholder="Enter application fee" name="application_fee">
+  <input type="number" placeholder="Enter event fee" name="event_fee">
+  <input type="text" placeholder="Submitted? Enter yes or no" name="submitted">
+  <input type="text" placeholder="Accepted? Enter yes, NA, or no" name="accepted">
+  <input class= "error_field" type="text" placeholder="Enter due date" name="due_date">
+  <input type="number" placeholder="Enter location ID" name="locations_id">
+  <input type="text" placeholder="Enter application details" name="application_details">
+  
+  <input type="submit">
+</form>
+
+
+<h3 class= centered>Event List</h3>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Event Name</th>
+    <th>Application ID</th>
+    <th>Event Date</th>
+    <th>Check In Time</th>
+    <th>Location Id</th>
+    <th>Ammenities</th>
+    <th>Contact Email</th>
+    <th>Contact Phone</th>  
+  </tr>
+  <% Event.all_sorted_by_date.each do |event| %>
+  <tr>
+    <td><%= event.id %></td>
+    <td><%= event.name %></td>
+    <td><%= event.applications_id %></td>
+    <td><%= event.event_date %></td>
+    <td><%= event.check_in_time %></td>
+    <td><%= event.locations_id %></td>
+    <td><%= event.ammenities %></td>
+    <td><%= event.contact_email %></td>
+    <td><%= event.contact_phone %></td>
+  </tr>
+  <% end %>
+</table>
+
+
+
+<h3 class= centered>Location List</h3>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Address</th>
+  </tr>
+  <% Location.sorted.each do |location| %>
+  <tr>
+    <td><%= location.id %></td>
+    <td><%= location.city %></td>
+    <td><%= location.state %></td>
+    <td><%= location.address %></td>
+  </tr>
+  <% end %>
+</table>
