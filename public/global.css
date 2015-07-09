@@ -41,8 +41,6 @@ body p {
   padding-left: 0px;
   font-size: 33px;
   margin-top: 0px;
-  color: white;
-  
 }
 
 #menu-bar{
@@ -51,16 +49,26 @@ body p {
   
 @media (min-width: 800px) {
 #menu ul {
+  font-size: 21px;
+  margin-bottom: 0px;
+}
+
+#menu {
+  left: 0px;
+  height: auto;
+  top: 0px;
+  position: relative;
+  float: left;
   width: 20%;
-  padding-top: 20px;
+  display: block;
+}
+
+#menu-bar{
+  display: none;
 }
   
-#menu li {
-  height: 30px;
-  font-size: 15px;
-}
-  
-.main-p p{
+.main {
+  float: left;
   width: 80%;
 }
 }
