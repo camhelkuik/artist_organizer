@@ -1,9 +1,9 @@
 function showMenu(){
-   document.getElementById("menu").style.top = 0 + "px";   
+   document.getElementById("menu").className = "";   
 }
 
 function hideMenu(){
-  document.getElementById("menu").style.top = "-" + 300 + "px";  
+  document.getElementById("menu").className = "hide";  
 }
 
 hideMenu();

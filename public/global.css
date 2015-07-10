@@ -31,16 +31,23 @@ body p {
   left: 68px;
 }
 
+#menu a {
+  color: white;
+}
+
 #menu li {
   border-style: solid;
-  border-color: #6C5A80;
+  border-top: thin double teal;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
 }
 
 #menu ul {
   list-style-type: none;
   padding-left: 0px;
   font-size: 33px;
-  margin-top: 0px;
+  margin-top: 14px;
 }
 
 #menu-bar{
@@ -56,8 +63,8 @@ body p {
 #menu {
   left: 0px;
   height: auto;
-  top: 0px;
   position: relative;
+  top: 0px;
   float: left;
   width: 20%;
   display: block;
@@ -113,4 +120,8 @@ background-color: #6C5A80;
 
 .field_error{
 border-color: red;
+}
+
+.hide {
+  display: none;
 }
