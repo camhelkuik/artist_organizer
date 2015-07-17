@@ -6,5 +6,7 @@ gem 'sinatra'
 gem "pry"
 gem "sinatra-reloader"
 gem 'activesupport'
-gem "sqlite3"
 gem "geocoder"
+
+gem 'sqlite3', :groups => [:development, :test]
+gem 'pg', :groups => [:production]
