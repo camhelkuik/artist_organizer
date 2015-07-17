@@ -7,3 +7,4 @@ gem "pry"
 gem "sinatra-reloader"
 gem 'activesupport'
 gem "sqlite3"
+gem "geocoder"
